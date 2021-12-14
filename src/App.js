@@ -15,23 +15,9 @@ const App = () => {
 
   const handleFeedback = (event) => {
     const { name } = event.target;
-    if (name === "good") return setGood(good + 1);
-    if (name === "neutral") return setNeutral(neutral + 1);
-    if (name === "bad") return setBad(bad + 1);
-
-    // switch (name) {
-    //   case "good":
-    //     setGood(good + 1);
-    //     break;
-    //   case "neutral":
-    //     setNeutral(neutral + 1);
-    //     break;
-    //   case "bad":
-    //     setBad(bad + 1);
-    //     break;
-    //   default:
-    //     return;
-    // }
+    if (name === "good") return setGood((prevGood) => prevGood + 1);
+    if (name === "neutral") return setNeutral((prevNeutral) => prevNeutral + 1);
+    if (name === "bad") return setBad((prevBad) => prevBad + 1);
   };
 
   const countTotalFeedback = () => {
